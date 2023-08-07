@@ -12,7 +12,7 @@ export default {
   input: resolve('src/index.ts'),
   output: [
     {
-      name: 'track-sdk',
+      name: 'is',
       file: 'dist/is.umd.js',
       format: 'umd',
       exports: 'named',

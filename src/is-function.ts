@@ -2,7 +2,7 @@
  * 判断是不是函数
  * @param value
  */
-const isFunction = function (value: string): boolean {
+const isFunction = function (value: any): boolean {
   return value && typeof value === 'function'
 }
 
