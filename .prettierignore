@@ -1,0 +1,22 @@
+## OS
+.DS_Store
+.idea
+.editorconfig
+pnpm-lock.yaml
+.npmrc
+yarn.lock
+
+# Ignored suffix
+*.log
+*.md
+*.svg
+*.png
+*.ico
+*ignore
+
+## Local
+.husky
+
+## Built-files
+.cache
+dist

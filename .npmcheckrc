@@ -1,0 +1,13 @@
+{
+    "depcheck": {
+        "ignoreMatches": [
+            "@babel/core",
+            "@babel/eslint-parser",
+            "@commitlint/cli",
+            "@commitlint/config-conventional",
+            "cz-git",
+            "glob",
+            "rollup"
+        ]
+    }
+}
