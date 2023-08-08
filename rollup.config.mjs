@@ -136,4 +136,28 @@ export default [
     ],
     plugins: plugins,
   },
+
+  // date module
+  {
+    input: resolve('src/date/index.ts'),
+    output: [
+      {
+        name: 'date',
+        file: 'dist/date/min.umd.js',
+        format: 'umd',
+        exports: 'named',
+      },
+      {
+        file: 'dist/date/min.esm.js',
+        format: 'es',
+        exports: 'named',
+      },
+      {
+        file: 'dist/date/min.cjs.js',
+        format: 'cjs',
+        exports: 'named',
+      },
+    ],
+    plugins: plugins,
+  },
 ]

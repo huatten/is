@@ -1,6 +1,7 @@
 import * as type from './type'
 import * as regexp from './regexp'
 import * as env from './env'
+import * as date from './date'
 
 export const is = {
   // type
@@ -17,11 +18,14 @@ export const is = {
   node: (): boolean => env.isNode(),
   windows: (): boolean => env.isWindows(),
   mac: (): boolean => env.isMac(),
+  // date
+  today: (value: Date): boolean => date.isToday(value),
 }
 
 // TODO
 export * from './type'
 export * from './regexp'
 export * from './env'
+export * from './date'
 
 export default is
