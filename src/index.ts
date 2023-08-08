@@ -18,6 +18,7 @@ export const is = {
   node: (): boolean => env.isNode(),
   windows: (): boolean => env.isWindows(),
   mac: (): boolean => env.isMac(),
+  linux: (): boolean => env.isLinux(),
   // date
   today: (value: Date): boolean => date.isToday(value),
 }
