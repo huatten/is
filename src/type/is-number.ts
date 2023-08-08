@@ -2,7 +2,7 @@
  * 判断是不是Number
  * @param value
  */
-import typeOf from './utils/typeOf'
+import typeOf from '../shared/typeOf'
 const isNumber = function (value: number): boolean {
   return typeof value === 'number' || typeOf(value) === 'number' || Number.isFinite(value)
 }

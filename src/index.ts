@@ -1,21 +1,27 @@
-import isString from './lib/is-string'
-import isNumber from './lib/is-number'
-import isBoolean from './lib/is-boolean'
-import isFunction from './lib/is-function'
-import isArray from './lib/is-array'
-import isNan from './lib/is-nan'
-import isHexColor from './lib/is-hexColor'
+import * as type from './type'
+import * as regexp from './regexp'
+import * as env from './env'
 
 export const is = {
-  string: (value: string): boolean => isString(value),
-  number: (value: number): boolean => isNumber(value),
-  function: (value: any): boolean => isFunction(value),
-  array: (value: []): boolean => isArray(value),
-  boolean: (value: boolean): boolean => isBoolean(value),
-  nan: (value: number): boolean => isNan(value),
-  hexColor: (value: string): boolean => isHexColor(value),
+  // type
+  string: (value: string): boolean => type.isString(value),
+  number: (value: number): boolean => type.isNumber(value),
+  function: (value: any): boolean => type.isFunction(value),
+  array: (value: []): boolean => type.isArray(value),
+  boolean: (value: boolean): boolean => type.isBoolean(value),
+  nan: (value: number): boolean => type.isNan(value),
+  // regexp
+  hexColor: (value: string): boolean => regexp.isHexColor(value),
+  // env
+  browser: (): boolean => env.isBrowser(),
+  node: (): boolean => env.isNode(),
+  windows: (): boolean => env.isWindows(),
+  mac: (): boolean => env.isMac(),
 }
 
-export { isString, isNumber, isBoolean, isFunction, isArray, isNan, isHexColor }
+// TODO
+export * from './type'
+export * from './regexp'
+export * from './env'
 
 export default is
