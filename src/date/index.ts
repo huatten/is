@@ -1,3 +1,3 @@
+import isTimestamp from './is-timestamp'
 import isToday from './is-today'
-
-export { isToday }
+export { isTimestamp, isToday }

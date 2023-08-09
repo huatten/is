@@ -16,6 +16,9 @@
  * isObject(Function)
  * // => true
  *
+ * isObject(()=>{}))
+ * // => true
+ *
  * isObject(null)
  * // => false
  */
