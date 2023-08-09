@@ -1,10 +1,17 @@
 /**
- * 判断是不是NaN
+ * 检查value是不是NaN
  * @param value
+ * @return boolean
+ * @example
+ *
+ * isNan(NaN)
+ * // => true
+ *
+ * isNan(1)
+ * // => false
  */
-import typeOf from '../shared/typeOf'
 const isNan = function (value: number): boolean {
-  return typeOf(value) === 'number' && Number.isNaN(value)
+  return typeof value === 'number' && Number.isNaN(value)
 }
 
 export default isNan

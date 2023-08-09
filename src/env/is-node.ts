@@ -1,6 +1,6 @@
 /**
  * 判断是不是node环境
- * @param value
+ * @return boolean
  */
 const isNode = function (): boolean {
   // eslint-disable-next-line no-undef

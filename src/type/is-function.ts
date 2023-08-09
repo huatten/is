@@ -1,10 +1,29 @@
-import typeOf from '../shared/typeOf'
 /**
- * 判断是不是函数
+ * 检查value是不是function
  * @param value
+ * @return boolean
+ * @example
+ *
+ * isFunction(class Any{})
+ * // => true
+ *
+ * isFunction(() => {})
+ * // => true
+ *
+ * isFunction(async () => {})
+ * // => true
+ *
+ * isFunction(function * Any() {})
+ * // => true
+ *
+ * isFunction(Math.round)
+ * // => true
+ *
+ * isFunction(/abc/)
+ * // => false
  */
 const isFunction = function (value: any): value is (...args: any[]) => any {
-  return typeOf(value) === 'function' && typeof value === 'function'
+  return typeof value === 'function'
 }
 
 export default isFunction
