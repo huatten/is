@@ -1,3 +1,4 @@
+import isArguments from './is-arguments'
 import isArray from './is-array'
 import isBoolean from './is-boolean'
 import isDate from './is-date'
@@ -8,5 +9,19 @@ import isNumber from './is-number'
 import isObject from './is-object'
 import isRegexp from './is-regexp'
 import isString from './is-string'
+import isUndefined from './is-undefined'
 
-export { isArray, isBoolean, isDate, isFunction, isNan, isNull, isNumber, isObject, isRegexp, isString }
+export {
+  isArguments,
+  isArray,
+  isBoolean,
+  isDate,
+  isFunction,
+  isNan,
+  isNull,
+  isNumber,
+  isObject,
+  isRegexp,
+  isString,
+  isUndefined,
+}
