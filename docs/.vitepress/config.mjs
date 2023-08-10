@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "is",
-  description: "a mini javascript check and judgment library",
+  title: 'is',
+  description: 'a mini javascript check and judgment library',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -17,13 +17,11 @@ export default defineConfig({
         text: '类型',
         items: [
           { text: 'isArguments', link: '/type/is-arguments' },
-          { text: 'isArray', link: '/type/is-array' }
-        ]
-      }
+          { text: 'isArray', link: '/type/is-array' },
+        ],
+      },
     ],
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/huatten/is' }
-    ]
-  }
+    socialLinks: [{ icon: 'github', link: 'https://github.com/huatten/is' }],
+  },
 })
