@@ -29,3 +29,7 @@ coverage
 
 # Json
 package-lock.json
+
+#Vitepress
+docs/.vitepress/dist
+docs/.vitepress/cache
