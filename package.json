@@ -6,11 +6,11 @@
   "scripts": {
     "preinstall": "npx only-allow yarn",
     "prepare": "npx husky install",
-    "lint": "eslint --ext .js,jsx,.ts,.tsx ./ --max-warnings 0 --cache --cache-location node_modules/.cache/eslint/ --fix",
+    "lint": "eslint --ext .js,.mjs,.cjs ./ --max-warnings 0 --cache --cache-location node_modules/.cache/eslint/ --fix",
     "format": "prettier --write .",
     "build": "rimraf dist && rollup -c rollup.config.mjs",
     "commit": "git add -A && git cz && git push",
-    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
+    "test": "jest"
   },
   "keywords": [
     "is",
@@ -52,6 +52,7 @@
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
     "@rollup/plugin-commonjs": "^25.0.3",
+    "babel-jest": "^29.6.2",
     "commitizen": "^4.3.0",
     "core-js": "^3.32.0",
     "cz-git": "^1.7.0",
