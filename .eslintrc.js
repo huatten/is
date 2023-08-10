@@ -9,7 +9,7 @@ module.exports = {
     jest: true,
     es6: true,
   },
-  extends: ['alloy', 'alloy/typescript'],
+  extends: ['alloy'],
   globals: {
     // 你的全局变量（设置为 false 表示它不允许被重新赋值）
   },

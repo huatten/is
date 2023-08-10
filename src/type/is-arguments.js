@@ -11,7 +11,7 @@
  * // => false
  */
 import typeOf from '../shared/typeOf'
-const isArguments = function (value: object): boolean {
+const isArguments = function (value) {
   return typeOf(value) === 'arguments' || (value !== null && typeof value === 'object' && 'callee' in value)
 }
 

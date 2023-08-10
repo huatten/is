@@ -2,7 +2,6 @@ import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
 import babel from 'rollup-plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
-import typescript from '@rollup/plugin-typescript'
 import filesize from 'rollup-plugin-filesize'
 import { terser } from 'rollup-plugin-terser'
 
@@ -23,13 +22,6 @@ const plugins = [
     runtimeHelpers: true,
   }),
   /**
-   * typescript编译
-   * @see https://github.com/rollup/plugins/tree/master/packages/typescript
-   */
-  typescript({
-    tsconfig: resolve('./tsconfig.json'),
-  }),
-  /**
    * 代码压缩
    * @see https://github.com/TrySound/rollup-plugin-terser
    */
@@ -44,7 +36,7 @@ const plugins = [
 export default [
   // is module
   {
-    input: resolve('src/index.ts'),
+    input: resolve('src/index.js'),
     output: [
       {
         name: 'is',
@@ -67,7 +59,7 @@ export default [
   },
   // type module
   {
-    input: resolve('src/type/index.ts'),
+    input: resolve('src/type/index.js'),
     output: [
       {
         name: 'type',
@@ -91,7 +83,7 @@ export default [
 
   // regexp module
   {
-    input: resolve('src/regexp/index.ts'),
+    input: resolve('src/regexp/index.js'),
     output: [
       {
         name: 'regexp',
@@ -115,7 +107,7 @@ export default [
 
   // env module
   {
-    input: resolve('src/env/index.ts'),
+    input: resolve('src/env/index.js'),
     output: [
       {
         name: 'env',
@@ -139,7 +131,7 @@ export default [
 
   // date module
   {
-    input: resolve('src/date/index.ts'),
+    input: resolve('src/date/index.js'),
     output: [
       {
         name: 'date',

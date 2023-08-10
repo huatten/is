@@ -10,7 +10,7 @@
  * isNan(1)
  * // => false
  */
-const isNan = function (value: number): boolean {
+const isNan = function (value) {
   return typeof value === 'number' && Number.isNaN(value)
 }
 

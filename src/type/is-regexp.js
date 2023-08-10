@@ -14,7 +14,7 @@
  * // => false
  */
 import typeOf from '../shared/typeOf'
-const isRegexp = function (value: object): boolean {
+const isRegexp = function (value) {
   return typeof value === 'object' && typeOf(value) === 'regexp'
 }
 

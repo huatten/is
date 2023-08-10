@@ -13,7 +13,7 @@
  * isNull(void)
  * // => false
  */
-const isNull = function (value: null): boolean {
+const isNull = function (value) {
   return value === null
 }
 

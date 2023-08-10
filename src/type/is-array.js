@@ -14,7 +14,7 @@
  * // => false
  */
 import typeOf from '../shared/typeOf'
-const isArray = function (value: any): boolean {
+const isArray = function (value) {
   return (value && Array.isArray(value)) || typeOf(value) === 'array'
 }
 

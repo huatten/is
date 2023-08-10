@@ -11,7 +11,7 @@
  * // => false
  */
 import typeOf from '../shared/typeOf'
-const isString = function (value: string): boolean {
+const isString = function (value) {
   return typeOf(value) === 'string'
 }
 

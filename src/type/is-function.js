@@ -22,7 +22,7 @@
  * isFunction(/abc/)
  * // => false
  */
-const isFunction = function (value: any): value is (...args: any[]) => any {
+const isFunction = function (value) {
   return typeof value === 'function'
 }
 

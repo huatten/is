@@ -10,7 +10,7 @@
  * isTimestamp('1628342400000')
  * // => false
  */
-const isTimestamp = function (value: number): boolean {
+const isTimestamp = function (value) {
   return typeof value === 'number' && value > 0 && new Date(value).getTime() === value
 }
 

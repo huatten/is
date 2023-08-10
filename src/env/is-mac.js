@@ -3,7 +3,7 @@
  * @return boolean
  */
 import { platform } from '../shared/constant'
-const isMac = function (): boolean {
+const isMac = function () {
   return /mac/.test(platform)
 }
 

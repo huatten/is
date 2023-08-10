@@ -17,7 +17,7 @@
  * // => false
  */
 import typeOf from '../shared/typeOf'
-const isBoolean = function (value: any): boolean {
+const isBoolean = function (value) {
   return value === true || value === false || typeOf(value) === 'boolean'
 }
 

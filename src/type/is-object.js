@@ -22,7 +22,7 @@
  * isObject(null)
  * // => false
  */
-const isObject = function (value: object): boolean {
+const isObject = function (value) {
   return Object(value) === value
 }
 

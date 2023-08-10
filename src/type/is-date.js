@@ -11,7 +11,7 @@
  * // => false
  */
 import typeOf from '../shared/typeOf'
-const isDate = function (value: Date): boolean {
+const isDate = function (value) {
   return typeOf(value) === 'date'
 }
 

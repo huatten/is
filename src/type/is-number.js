@@ -20,7 +20,7 @@
  * isNumber('1')
  * // => false
  */
-const isNumber = function (value: number): boolean {
+const isNumber = function (value) {
   return typeof value === 'number' && !Number.isNaN(value) && Number(value) === value
 }
 

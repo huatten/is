@@ -3,7 +3,7 @@
  * @return boolean
  */
 import { platform } from '../shared/constant'
-const isWindows = function (): boolean {
+const isWindows = function () {
   return /win/.test(platform)
 }
 

@@ -13,7 +13,7 @@
  * isUndefined(null)
  * // => false
  */
-const isUndefined = function (value: undefined): boolean {
+const isUndefined = function (value) {
   return value === undefined
 }
 

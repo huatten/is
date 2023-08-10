@@ -10,7 +10,7 @@
     "format": "prettier --write .",
     "build": "rimraf dist && rollup -c rollup.config.mjs",
     "commit": "git add -A && git cz && git push",
-    "test": "jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
   },
   "keywords": [
     "is",
@@ -52,10 +52,6 @@
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
     "@rollup/plugin-commonjs": "^25.0.3",
-    "@rollup/plugin-typescript": "^11.1.2",
-    "@types/jest": "^29.5.3",
-    "@typescript-eslint/eslint-plugin": "^6.2.1",
-    "@typescript-eslint/parser": "^6.2.1",
     "commitizen": "^4.3.0",
     "core-js": "^3.32.0",
     "cz-git": "^1.7.0",
@@ -72,10 +68,7 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-filesize": "^10.0.0",
     "rollup-plugin-terser": "^7.0.2",
-    "standard-version": "^9.5.0",
-    "ts-jest": "^29.1.1",
-    "tslib": "^2.6.1",
-    "typescript": "^5.1.6"
+    "standard-version": "^9.5.0"
   },
   "peerDependencies": {
     "core-js": "^3.32.0"
@@ -94,8 +87,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "dependencies": {
-    "@babel/preset-typescript": "^7.22.5"
   }
 }
