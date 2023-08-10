@@ -27,7 +27,7 @@ const config = {
   testEnvironment: 'jsdom',
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ['<rootDir>/__tests__/**/*.js'],
+  testMatch: ['<rootDir>/__tests__/**/*.{spec,test}.js'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   testPathIgnorePatterns: ['<rootDir>/node_modules/'],
