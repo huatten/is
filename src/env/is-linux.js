@@ -3,6 +3,7 @@
  * @return boolean
  */
 import { platform } from '../shared/constant'
+
 const isLinux = function () {
   return /linux/.test(platform)
 }
