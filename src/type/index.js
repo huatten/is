@@ -2,6 +2,7 @@ import isArguments from './is-arguments'
 import isArray from './is-array'
 import isBoolean from './is-boolean'
 import isDate from './is-date'
+import isEmpty from './is-empty'
 import isFunction from './/is-function'
 import isJSON from './is-json'
 import isNan from './is-nan'
@@ -17,6 +18,7 @@ export {
   isArray,
   isBoolean,
   isDate,
+  isEmpty,
   isFunction,
   isJSON,
   isNan,
