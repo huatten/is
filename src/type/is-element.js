@@ -4,10 +4,10 @@
  * @return boolean
  * @example
  *
- * isElement()
+ * isElement(document.body)
  * // => true
  *
- * isElement()
+ * isElement('<body></body>')
  * // => false
  */
 import typeOf from '../shared/typeOf'
