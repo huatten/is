@@ -19,6 +19,8 @@ import isMac from './is-mac'
 import isMeego from './is-meego'
 import isMobile from './is-mobile'
 import isNode from './is-node'
+import isOffline from './is-offline'
+import isOnline from './is-online'
 import isOpera from './is-opera'
 import isSafari from './is-safari'
 import isTablet from './is-tablet'
@@ -49,6 +51,8 @@ export {
   isMeego,
   isMobile,
   isNode,
+  isOffline,
+  isOnline,
   isOpera,
   isSafari,
   isTablet,
