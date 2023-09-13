@@ -12,6 +12,7 @@ import isNumber from './is-number'
 import isObject from './is-object'
 import isRegexp from './is-regexp'
 import isString from './is-string'
+import isSymbol from './is-symbol'
 import isUndefined from './is-undefined'
 
 export {
@@ -29,5 +30,6 @@ export {
   isObject,
   isRegexp,
   isString,
+  isSymbol,
   isUndefined,
 }
