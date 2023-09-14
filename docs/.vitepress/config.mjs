@@ -6,6 +6,7 @@ export default defineConfig({
   description: 'a mini javascript check and judgment library',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: '../logo/logo.svg',
     nav: [
       { text: '首页', link: '/' },
       { text: '指南', link: '/guide' },

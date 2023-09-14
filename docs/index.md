@@ -6,6 +6,8 @@ hero:
   name: "is"
   text: "一个用于对象检查判断的javascript工具库"
   tagline: 检查类型、正则、环境、时间、存在等...
+  image: 
+    src: /logo/logo.svg
   actions:
     - theme: brand
       text: 开始使用
