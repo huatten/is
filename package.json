@@ -57,14 +57,14 @@
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@rollup/plugin-commonjs": "^25.0.4",
-    "@vitest/coverage-istanbul": "^0.34.4",
-    "@vitest/ui": "^0.34.4",
+    "@vitest/coverage-istanbul": "^0.34.5",
+    "@vitest/ui": "^0.34.5",
     "commitizen": "^4.3.0",
     "core-js": "^3.32.2",
     "cz-git": "^1.7.1",
     "eslint": "^8.49.0",
     "eslint-config-alloy": "^5.1.2",
-    "glob": "^10.3.4",
+    "glob": "^10.3.5",
     "husky": "^8.0.3",
     "jsdom": "^22.1.0",
     "lint-staged": "^14.0.1",
@@ -76,7 +76,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "standard-version": "^9.5.0",
     "vitepress": "^1.0.0-rc.4",
-    "vitest": "^0.34.4"
+    "vitest": "^0.34.5"
   },
   "peerDependencies": {
     "core-js": "^3.32.0"
