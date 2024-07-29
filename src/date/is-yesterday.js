@@ -23,6 +23,8 @@ import isTimestamp from './is-timestamp'
 import isDate from '../type/is-date'
 
 const isYesterday = function (value) {
+  if (!isDate(value) || !isTimestamp(value)) throw new Error(`isYesterday: params must be a Date Object or timestamp`)
+
   const date = isDate(value) ? value : isTimestamp(value) ? new Date(value) : ''
 
   const now = new Date()

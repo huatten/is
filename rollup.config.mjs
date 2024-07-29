@@ -1,10 +1,9 @@
 import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
-import babel from 'rollup-plugin-babel'
+import { babel } from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 import filesize from 'rollup-plugin-filesize'
-import { terser } from 'rollup-plugin-terser'
-
+import terser from '@rollup/plugin-terser'
 const resolve = (p) => path.resolve(dirname(fileURLToPath(import.meta.url)), p)
 
 const plugins = [
@@ -19,7 +18,7 @@ const plugins = [
    */
   babel({
     exclude: ['node_modules/**'],
-    runtimeHelpers: true,
+    babelHelpers: 'bundled',
   }),
   /**
    * 代码压缩
@@ -63,17 +62,41 @@ export default [
     output: [
       {
         name: 'type',
-        file: 'dist/type/min.umd.js',
+        file: 'dist/type.umd.js',
         format: 'umd',
         exports: 'named',
       },
       {
-        file: 'dist/type/min.esm.js',
+        file: 'dist/type.esm.js',
         format: 'es',
         exports: 'named',
       },
       {
-        file: 'dist/type/min.cjs.js',
+        file: 'dist/type.cjs.js',
+        format: 'cjs',
+        exports: 'named',
+      },
+    ],
+    plugins: plugins,
+  },
+
+  // number module
+  {
+    input: resolve('src/number/index.js'),
+    output: [
+      {
+        name: 'arithmetic',
+        file: 'dist/number.umd.js',
+        format: 'umd',
+        exports: 'named',
+      },
+      {
+        file: 'dist/number.esm.js',
+        format: 'es',
+        exports: 'named',
+      },
+      {
+        file: 'dist/number.cjs.js',
         format: 'cjs',
         exports: 'named',
       },
@@ -87,17 +110,17 @@ export default [
     output: [
       {
         name: 'regexp',
-        file: 'dist/regexp/min.umd.js',
+        file: 'dist/regexp.umd.js',
         format: 'umd',
         exports: 'named',
       },
       {
-        file: 'dist/regexp/min.esm.js',
+        file: 'dist/regexp.esm.js',
         format: 'es',
         exports: 'named',
       },
       {
-        file: 'dist/regexp/min.cjs.js',
+        file: 'dist/regexp.cjs.js',
         format: 'cjs',
         exports: 'named',
       },
@@ -111,17 +134,17 @@ export default [
     output: [
       {
         name: 'env',
-        file: 'dist/env/min.umd.js',
+        file: 'dist/env.umd.js',
         format: 'umd',
         exports: 'named',
       },
       {
-        file: 'dist/env/min.esm.js',
+        file: 'dist/env.esm.js',
         format: 'es',
         exports: 'named',
       },
       {
-        file: 'dist/env/min.cjs.js',
+        file: 'dist/env.cjs.js',
         format: 'cjs',
         exports: 'named',
       },
@@ -135,17 +158,17 @@ export default [
     output: [
       {
         name: 'date',
-        file: 'dist/date/min.umd.js',
+        file: 'dist/date.umd.js',
         format: 'umd',
         exports: 'named',
       },
       {
-        file: 'dist/date/min.esm.js',
+        file: 'dist/date.esm.js',
         format: 'es',
         exports: 'named',
       },
       {
-        file: 'dist/date/min.cjs.js',
+        file: 'dist/date.cjs.js',
         format: 'cjs',
         exports: 'named',
       },

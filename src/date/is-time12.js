@@ -47,7 +47,9 @@
  * isTime12('09:34:56Pm')
  * => false
  */
+import assertString from '../shared/assertString'
 const isTime12 = function (value) {
+  assertString(value, 'isTime12')
   const timePattern = /^(?:0?[1-9]|1[0-2]):[0-5]\d:[0-5]\d(?:\.\d{3})?(?: (AM|am|PM|pm))?$/
   return typeof value === 'string' && timePattern.test(value)
 }

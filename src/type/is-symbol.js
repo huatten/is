@@ -6,6 +6,9 @@
  *
  * isSymbol(Symbol(123))
  * // => true
+ *
+ * isSymbol(1)
+ * // => false
  */
 import typeOf from '../shared/typeOf'
 const isSymbol = function (value) {

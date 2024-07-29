@@ -16,7 +16,9 @@
  * isHexColor('#f90fff23f')
  * // => false
  */
+import assertString from '../shared/assertString'
 const isHexColor = function (value) {
+  assertString(value, 'isHexColor')
   const hexColor = /^#?([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$/i
   return value && hexColor.test(value)
 }

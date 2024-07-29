@@ -26,7 +26,10 @@
  */
 import isTime12 from './is-time12'
 import isTime24 from './is-time24'
+import assertString from '../shared/assertString'
+
 const isTime = function (value) {
+  assertString(value, 'isTime')
   return isTime12(value) || isTime24(value)
 }
 

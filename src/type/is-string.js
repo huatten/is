@@ -7,6 +7,9 @@
  * isString('1')
  * // => true
  *
+ * isString(new String(1))
+ * // => true
+ *
  * isString(1)
  * // => false
  */

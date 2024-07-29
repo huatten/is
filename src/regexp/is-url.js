@@ -31,7 +31,9 @@
  * isURL('example.com/page')
  * // => true
  */
+import assertString from '../shared/assertString'
 const isURL = function (value) {
+  assertString(value, 'isURL')
   const urlPattern = /^(((ht|f)tps?):\/\/)?([^!@#$%^&*?.\s-]([^!@#$%^&*?.\s]{0,63}[^!@#$%^&*?.\s])?\.)+[a-z]{2,6}\/?/
   return value && urlPattern.test(value)
 }

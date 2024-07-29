@@ -21,9 +21,12 @@
  * isTime24('00:00:00.123')
  * // => true
  */
+import assertString from '../shared/assertString'
+
 const isTime24 = function (value) {
+  assertString(value, 'isTime24')
   const timePattern = /^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d(?:\.\d{3})?$/
-  return typeof value === 'string' && timePattern.test(value)
+  return value && timePattern.test(value)
 }
 
 export default isTime24

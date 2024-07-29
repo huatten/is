@@ -4,14 +4,14 @@
  * @return boolean
  * @example
  *
- * isNan(NaN)
+ * isNaN(NaN)
  * // => true
  *
- * isNan(1)
+ * isNaN(1)
  * // => false
  */
-const isNan = function (value) {
+const isNaN = function (value) {
   return typeof value === 'number' && Number.isNaN(value)
 }
 
-export default isNan
+export default isNaN
