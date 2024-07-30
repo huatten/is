@@ -13,6 +13,7 @@ import isSnakeCase from './is-snake_case'
 import isUppercase from './is-uppercase'
 import isLowercase from './is-lowercase'
 import isProvince from './is-province'
+import isJWT from './is-jwt'
 
 export {
   isHexColor,
@@ -30,4 +31,5 @@ export {
   isUppercase,
   isLowercase,
   isProvince,
+  isJWT,
 }

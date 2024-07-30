@@ -136,6 +136,7 @@ export default defineConfig({
           { text: 'isMD5', link: '/regexp/is-md5' },
           { text: 'isSHA256', link: '/regexp/is-sha256' },
           { text: 'isUUID', link: '/regexp/is-uuid' },
+          { text: 'isJWT', link: '/regexp/is-jwt' },
           { text: 'isHtml', link: '/regexp/is-html' },
           { text: 'isPhoneNumber', link: '/regexp/is-phone-number' },
           { text: 'isURL', link: '/regexp/is-url' },

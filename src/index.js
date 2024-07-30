@@ -94,6 +94,7 @@ export default {
   english: (value) => regexp.isEnglish(value),
   hexColor: (value) => regexp.isHexColor(value),
   html: (value) => regexp.isHtml(value),
+  jwt: (value) => regexp.isJWT(value),
   lowercase: (value) => regexp.isLowercase(value),
   md5: (value) => regexp.isMD5(value),
   pascalCase: (value) => regexp.isPascalCase(value),
