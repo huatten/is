@@ -4,6 +4,8 @@ outline: deep
 
 # 检查value是不是偶数
 
+> 用于检查给定的值是否为偶数。偶数是指`可以被2整除`的`整数`。 
+
 ### 全量引入
 ```javascript
 <script>
@@ -39,7 +41,7 @@ outline: deep
 ### 按模块引入
 ```javascript
 <script>
-  import { isDecimal } from 'is-check/type'
+  import { isDecimal } from 'is-check/number'
 
   isEven(12) // => true
 

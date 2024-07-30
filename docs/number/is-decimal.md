@@ -4,6 +4,8 @@ outline: deep
 
 # 检查value是不是小数
 
+> 用于检查给定的值是否为小数。小数是指带有小数部分的数字，包括`正小数`和`负小数`。
+
 ### 全量引入
 ```javascript
 <script>
@@ -23,7 +25,7 @@ outline: deep
 ### 按需引入
 ```javascript
 <script>
-  import { isDecimal } from 'is'
+  import { isDecimal } from 'is-check'
 
   isDecimal(19.99) // => true
 
@@ -39,7 +41,7 @@ outline: deep
 ### 按模块引入
 ```javascript
 <script>
-  import { isDecimal } from 'is/type'
+  import { isDecimal } from 'is-check/number'
 
   isDecimal(19.99) // => true
 
