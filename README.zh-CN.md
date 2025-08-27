@@ -162,6 +162,20 @@ is.snakeCase('snake_case') // true
 is.uppercase('UPPERCASE') // true
 is.lowercase('lowercase') // true
 is.province('广东省') // true
+is.ip('192.168.1.1') // true
+is.ipv4('192.168.1.1') // true
+is.ipv6('2001:0db8:85a3:0000:0000:8a2e:0370:7334') // true
+is.creditCard('4532015112830366') // true
+is.macAddress('00:11:22:33:44:55') // true
+is.magnetURI('magnet:?xt=urn:btih:...') // true
+is.mimeType('text/html') // true
+is.base64('SGVsbG8gV29ybGQ=') // true
+is.jsonString('{"name": "John"}') // true
+is.ascii('Hello World') // true
+is.multibyte('Héllo Wörld') // true
+is.halfWidth('Hello World') // true
+is.fullWidth('ＡＢＣ１２３') // true
+is.surrogatePair('𠮷') // true
 
 // 日期检查
 is.timestamp(1640995200000) // true
@@ -262,6 +276,22 @@ is.lastYear(new Date(Date.now() - 365 * 86400000)) // true
 | `isLowercase(value)` | 检查值是否为小写 | `isLowercase('lowercase')` |
 | `isProvince(value)` | 检查值是否为中文省份 | `isProvince('广东省')` |
 | `isJWT(value)` | 检查值是否为 JWT 令牌 | `isJWT('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...')` |
+| `isEmail(value)` | 检查值是否为有效的电子邮件地址 | `isEmail('test@example.com')` |
+| `isIP(value)` | 检查值是否为有效的 IP 地址 | `isIP('192.168.1.1')` |
+| `isIPv4(value)` | 检查值是否为有效的 IPv4 地址 | `isIPv4('192.168.1.1')` |
+| `isIPv6(value)` | 检查值是否为有效的 IPv6 地址 | `isIPv6('2001:0db8:85a3:0000:0000:8a2e:0370:7334')` |
+| `isCreditCard(value)` | 检查值是否为有效的信用卡号码 | `isCreditCard('4532015112830366')` |
+| `isPostalCode(value)` | 检查值是否为有效的邮政编码 | `isPostalCode('12345', 'US')` |
+| `isMACAddress(value)` | 检查值是否为有效的 MAC 地址 | `isMACAddress('00:11:22:33:44:55')` |
+| `isMagnetURI(value)` | 检查值是否为有效的磁力链接 | `isMagnetURI('magnet:?xt=urn:btih:...')` |
+| `isMimeType(value)` | 检查值是否为有效的 MIME 类型 | `isMimeType('text/html')` |
+| `isBase64(value)` | 检查值是否为有效的 Base64 字符串 | `isBase64('SGVsbG8gV29ybGQ=')` |
+| `isJSONString(value)` | 检查值是否为有效的 JSON 字符串 | `isJSONString('{"name": "John"}')` |
+| `isAscii(value)` | 检查值是否只包含 ASCII 字符 | `isAscii('Hello World')` |
+| `isMultibyte(value)` | 检查值是否包含多字节字符 | `isMultibyte('Héllo Wörld')` |
+| `isHalfWidth(value)` | 检查值是否包含半角字符 | `isHalfWidth('Hello World')` |
+| `isFullWidth(value)` | 检查值是否包含全角字符 | `isFullWidth('ＡＢＣ１２３')` |
+| `isSurrogatePair(value)` | 检查值是否包含代理对字符 | `isSurrogatePair('𠮷')` |
 
 ### 环境模块 (`is-check/env`)
 

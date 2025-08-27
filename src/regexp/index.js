@@ -14,6 +14,22 @@ import isUppercase from './is-uppercase'
 import isLowercase from './is-lowercase'
 import isProvince from './is-province'
 import isJWT from './is-jwt'
+import isEmail from './is-email'
+import isIP from './is-ip'
+import isIPv4 from './is-ipv4'
+import isIPv6 from './is-ipv6'
+import isCreditCard from './is-credit-card'
+import isPostalCode from './is-postal-code'
+import isMACAddress from './is-mac-address'
+import isMagnetURI from './is-magnet-uri'
+import isMimeType from './is-mime-type'
+import isBase64 from './is-base64'
+import isJSONString from './is-json-string'
+import isAscii from './is-ascii'
+import isMultibyte from './is-multibyte'
+import isHalfWidth from './is-half-width'
+import isFullWidth from './is-full-width'
+import isSurrogatePair from './is-surrogate-pair'
 
 export {
   isHexColor,
@@ -32,4 +48,20 @@ export {
   isLowercase,
   isProvince,
   isJWT,
+  isEmail,
+  isIP,
+  isIPv4,
+  isIPv6,
+  isCreditCard,
+  isPostalCode,
+  isMACAddress,
+  isMagnetURI,
+  isMimeType,
+  isBase64,
+  isJSONString,
+  isAscii,
+  isMultibyte,
+  isHalfWidth,
+  isFullWidth,
+  isSurrogatePair,
 }

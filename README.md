@@ -162,6 +162,20 @@ is.snakeCase('snake_case') // true
 is.uppercase('UPPERCASE') // true
 is.lowercase('lowercase') // true
 is.province('广东省') // true
+is.ip('192.168.1.1') // true
+is.ipv4('192.168.1.1') // true
+is.ipv6('2001:0db8:85a3:0000:0000:8a2e:0370:7334') // true
+is.creditCard('4532015112830366') // true
+is.macAddress('00:11:22:33:44:55') // true
+is.magnetURI('magnet:?xt=urn:btih:...') // true
+is.mimeType('text/html') // true
+is.base64('SGVsbG8gV29ybGQ=') // true
+is.jsonString('{"name": "John"}') // true
+is.ascii('Hello World') // true
+is.multibyte('Héllo Wörld') // true
+is.halfWidth('Hello World') // true
+is.fullWidth('ＡＢＣ１２３') // true
+is.surrogatePair('𠮷') // true
 
 // Date checks
 is.timestamp(1640995200000) // true
@@ -262,6 +276,22 @@ is.lastYear(new Date(Date.now() - 365 * 86400000)) // true
 | `isLowercase(value)` | Check if value is lowercase | `isLowercase('lowercase')` |
 | `isProvince(value)` | Check if value is a Chinese province | `isProvince('广东省')` |
 | `isJWT(value)` | Check if value is a JWT token | `isJWT('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...')` |
+| `isEmail(value)` | Check if value is a valid email address | `isEmail('test@example.com')` |
+| `isIP(value)` | Check if value is a valid IP address | `isIP('192.168.1.1')` |
+| `isIPv4(value)` | Check if value is a valid IPv4 address | `isIPv4('192.168.1.1')` |
+| `isIPv6(value)` | Check if value is a valid IPv6 address | `isIPv6('2001:0db8:85a3:0000:0000:8a2e:0370:7334')` |
+| `isCreditCard(value)` | Check if value is a valid credit card number | `isCreditCard('4532015112830366')` |
+| `isPostalCode(value)` | Check if value is a valid postal code | `isPostalCode('12345', 'US')` |
+| `isMACAddress(value)` | Check if value is a valid MAC address | `isMACAddress('00:11:22:33:44:55')` |
+| `isMagnetURI(value)` | Check if value is a valid magnet URI | `isMagnetURI('magnet:?xt=urn:btih:...')` |
+| `isMimeType(value)` | Check if value is a valid MIME type | `isMimeType('text/html')` |
+| `isBase64(value)` | Check if value is a valid Base64 string | `isBase64('SGVsbG8gV29ybGQ=')` |
+| `isJSONString(value)` | Check if value is a valid JSON string | `isJSONString('{"name": "John"}')` |
+| `isAscii(value)` | Check if value contains only ASCII characters | `isAscii('Hello World')` |
+| `isMultibyte(value)` | Check if value contains multibyte characters | `isMultibyte('Héllo Wörld')` |
+| `isHalfWidth(value)` | Check if value contains half-width characters | `isHalfWidth('Hello World')` |
+| `isFullWidth(value)` | Check if value contains full-width characters | `isFullWidth('ＡＢＣ１２３')` |
+| `isSurrogatePair(value)` | Check if value contains surrogate pair characters | `isSurrogatePair('𠮷')` |
 
 ### Environment Module (`is-check/env`)
 

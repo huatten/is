@@ -115,6 +115,22 @@ export default {
   uppercase: (value) => regexp.isUppercase(value),
   url: (value) => regexp.isURL(value),
   uuid: (value) => regexp.isUUID(value),
+  email: (value) => regexp.isEmail(value),
+  ip: (value) => regexp.isIP(value),
+  ipv4: (value) => regexp.isIPv4(value),
+  ipv6: (value) => regexp.isIPv6(value),
+  creditCard: (value) => regexp.isCreditCard(value),
+  postalCode: (value) => regexp.isPostalCode(value),
+  macAddress: (value) => regexp.isMACAddress(value),
+  magnetURI: (value) => regexp.isMagnetURI(value),
+  mimeType: (value) => regexp.isMimeType(value),
+  base64: (value) => regexp.isBase64(value),
+  jsonString: (value) => regexp.isJSONString(value),
+  ascii: (value) => regexp.isAscii(value),
+  multibyte: (value) => regexp.isMultibyte(value),
+  halfWidth: (value) => regexp.isHalfWidth(value),
+  fullWidth: (value) => regexp.isFullWidth(value),
+  surrogatePair: (value) => regexp.isSurrogatePair(value),
 
   /**
    * date 日期模块
