@@ -33,6 +33,16 @@ export default {
   string: (value) => type.isString(value),
   symbol: (value) => type.isSymbol(value),
   undefined: (value) => type.isUndefined(value),
+  map: (value) => type.isMap(value),
+  set: (value) => type.isSet(value),
+  promise: (value) => type.isPromise(value),
+  generator: (value) => type.isGenerator(value),
+  asyncFunction: (value) => type.isAsyncFunction(value),
+  typedArray: (value) => type.isTypedArray(value),
+  error: (value) => type.isError(value),
+  file: (value) => type.isFile(value),
+  blob: (value) => type.isBlob(value),
+  formData: (value) => type.isFormData(value),
 
   /**
    * env 环境模块

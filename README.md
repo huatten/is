@@ -94,6 +94,16 @@ is.json('{"a": 1}') // true
 is.arguments(arguments) // true (in function context)
 is.element(document.body) // true (in browser)
 is.arraybuffer(new ArrayBuffer(8)) // true
+is.map(new Map()) // true
+is.set(new Set()) // true
+is.promise(Promise.resolve()) // true
+is.generator(function* () {}) // true
+is.asyncFunction(async () => {}) // true
+is.typedArray(new Int8Array()) // true
+is.error(new Error()) // true
+is.file(new File([], 'test.txt')) // true
+is.blob(new Blob()) // true
+is.formData(new FormData()) // true
 
 // Number checks
 is.integer(42) // true
@@ -202,6 +212,16 @@ is.lastYear(new Date(Date.now() - 365 * 86400000)) // true
 | `isString(value)` | Check if value is a string | `isString('hello')` |
 | `isSymbol(value)` | Check if value is a Symbol | `isSymbol(Symbol('id'))` |
 | `isUndefined(value)` | Check if value is undefined | `isUndefined(undefined)` |
+| `isMap(value)` | Check if value is a Map object | `isMap(new Map())` |
+| `isSet(value)` | Check if value is a Set object | `isSet(new Set())` |
+| `isPromise(value)` | Check if value is a Promise object | `isPromise(Promise.resolve())` |
+| `isGenerator(value)` | Check if value is a Generator function | `isGenerator(function* () {})` |
+| `isAsyncFunction(value)` | Check if value is an async function | `isAsyncFunction(async () => {})` |
+| `isTypedArray(value)` | Check if value is a TypedArray object | `isTypedArray(new Int8Array())` |
+| `isError(value)` | Check if value is an Error object | `isError(new Error())` |
+| `isFile(value)` | Check if value is a File object | `isFile(new File([], 'test.txt'))` |
+| `isBlob(value)` | Check if value is a Blob object | `isBlob(new Blob())` |
+| `isFormData(value)` | Check if value is a FormData object | `isFormData(new FormData())` |
 
 ### Number Module (`is-check/number`)
 

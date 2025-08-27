@@ -94,6 +94,16 @@ is.json('{"a": 1}') // true
 is.arguments(arguments) // true (在函数上下文中)
 is.element(document.body) // true (在浏览器中)
 is.arraybuffer(new ArrayBuffer(8)) // true
+is.map(new Map()) // true
+is.set(new Set()) // true
+is.promise(Promise.resolve()) // true
+is.generator(function* () {}) // true
+is.asyncFunction(async () => {}) // true
+is.typedArray(new Int8Array()) // true
+is.error(new Error()) // true
+is.file(new File([], 'test.txt')) // true
+is.blob(new Blob()) // true
+is.formData(new FormData()) // true
 
 // 数字检查
 is.integer(42) // true
@@ -202,6 +212,16 @@ is.lastYear(new Date(Date.now() - 365 * 86400000)) // true
 | `isString(value)` | 检查值是否为字符串 | `isString('hello')` |
 | `isSymbol(value)` | 检查值是否为 Symbol | `isSymbol(Symbol('id'))` |
 | `isUndefined(value)` | 检查值是否为 undefined | `isUndefined(undefined)` |
+| `isMap(value)` | 检查值是否为 Map 对象 | `isMap(new Map())` |
+| `isSet(value)` | 检查值是否为 Set 对象 | `isSet(new Set())` |
+| `isPromise(value)` | 检查值是否为 Promise 对象 | `isPromise(Promise.resolve())` |
+| `isGenerator(value)` | 检查值是否为 Generator 函数 | `isGenerator(function* () {})` |
+| `isAsyncFunction(value)` | 检查值是否为异步函数 | `isAsyncFunction(async () => {})` |
+| `isTypedArray(value)` | 检查值是否为 TypedArray 对象 | `isTypedArray(new Int8Array())` |
+| `isError(value)` | 检查值是否为 Error 对象 | `isError(new Error())` |
+| `isFile(value)` | 检查值是否为 File 对象 | `isFile(new File([], 'test.txt'))` |
+| `isBlob(value)` | 检查值是否为 Blob 对象 | `isBlob(new Blob())` |
+| `isFormData(value)` | 检查值是否为 FormData 对象 | `isFormData(new FormData())` |
 
 ### 数字模块 (`is-check/number`)
 

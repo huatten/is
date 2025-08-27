@@ -17,6 +17,16 @@ import isRegexp from './is-regexp'
 import isString from './is-string'
 import isSymbol from './is-symbol'
 import isUndefined from './is-undefined'
+import isMap from './is-map'
+import isSet from './is-set'
+import isPromise from './is-promise'
+import isGenerator from './is-generator'
+import isAsyncFunction from './is-async-function'
+import isTypedArray from './is-typed-array'
+import isError from './is-error'
+import isFile from './is-file'
+import isBlob from './is-blob'
+import isFormData from './is-form-data'
 
 export {
   isArguments,
@@ -38,4 +48,14 @@ export {
   isString,
   isSymbol,
   isUndefined,
+  isMap,
+  isSet,
+  isPromise,
+  isGenerator,
+  isAsyncFunction,
+  isTypedArray,
+  isError,
+  isFile,
+  isBlob,
+  isFormData,
 }
