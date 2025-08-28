@@ -23,7 +23,7 @@
 import assertString from '../shared/assertString'
 const isPostalCode = function (value, locale) {
   assertString(value, 'isPostalCode')
-  
+
   // Define postal code patterns for different locales
   const patterns = {
     US: /^(\d{5})(-\d{4})?$/,
@@ -46,21 +46,21 @@ const isPostalCode = function (value, locale) {
     JP: /^\d{3}-\d{4}$/,
     CN: /^\d{6}$/,
     IN: /^\d{6}$/,
-    BR: /^\d{5}-?\d{3}$/
+    BR: /^\d{5}-?\d{3}$/,
   }
-  
+
   // If locale is specified, use the corresponding pattern
   if (locale && patterns[locale]) {
     return patterns[locale].test(value)
   }
-  
+
   // If no locale specified, check against common patterns
   for (const key in patterns) {
     if (patterns[key].test(value)) {
       return true
     }
   }
-  
+
   return false
 }
 
