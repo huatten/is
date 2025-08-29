@@ -64,15 +64,19 @@ export default defineConfig({
             { text: 'is-finite', link: '/number/is-finite' },
             { text: 'is-infinite', link: '/number/is-infinite' },
             { text: 'is-integer', link: '/number/is-integer' },
+            { text: 'is-multiple-of', link: '/number/is-multiple-of' },
             { text: 'is-natural', link: '/number/is-natural' },
             { text: 'is-negative', link: '/number/is-negative' },
             { text: 'is-negative-decimal', link: '/number/is-negative-decimal' },
             { text: 'is-negative-integer', link: '/number/is-negative-integer' },
+            { text: 'is-non-zero', link: '/number/is-non-zero' },
             { text: 'is-odd', link: '/number/is-odd' },
             { text: 'is-positive', link: '/number/is-positive' },
             { text: 'is-positive-decimal', link: '/number/is-positive-decimal' },
             { text: 'is-positive-integer', link: '/number/is-positive-integer' },
-            { text: 'is-prime', link: '/number/is-prime' }
+            { text: 'is-prime', link: '/number/is-prime' },
+            { text: 'is-safe-integer', link: '/number/is-safe-integer' },
+            { text: 'is-zero', link: '/number/is-zero' }
           ]
         },
         {

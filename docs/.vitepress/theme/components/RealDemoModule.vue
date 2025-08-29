@@ -471,6 +471,41 @@ const functions = ref([
     example: `import is from 'is-check'\n\nis.prime(7) // true`,
     func: (value) => is.prime(Number(value))
   },
+  {
+    name: 'isZero',
+    category: 'number',
+    description: '检查值是否为零',
+    placeholder: '0',
+    example: `import is from 'is-check'\n\nis.zero(0) // true\nis.zero(-0) // true`,
+    func: (value) => is.zero(Number(value))
+  },
+  {
+    name: 'isNonZero',
+    category: 'number',
+    description: '检查值是否为非零数字',
+    placeholder: '1',
+    example: `import is from 'is-check'\n\nis.nonZero(1) // true\nis.nonZero(0) // false`,
+    func: (value) => is.nonZero(Number(value))
+  },
+  {
+    name: 'isSafeInteger',
+    category: 'number',
+    description: '检查值是否为安全整数',
+    placeholder: '42',
+    example: `import is from 'is-check'\n\nis.safeInteger(42) // true\nis.safeInteger(Number.MAX_SAFE_INTEGER + 1) // false`,
+    func: (value) => is.safeInteger(Number(value))
+  },
+  {
+    name: 'isMultipleOf',
+    category: 'number',
+    description: '检查值是否为某个数的倍数',
+    placeholder: '10, 2',
+    example: `import is from 'is-check'\n\nis.multipleOf(10, 2) // true\nis.multipleOf(10, 3) // false`,
+    func: (value) => {
+      const [num, divisor] = value.split(',').map(s => s.trim());
+      return is.multipleOf(Number(num), Number(divisor));
+    }
+  },
   
   // 正则检查
   {

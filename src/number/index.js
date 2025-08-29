@@ -12,6 +12,10 @@ import isPrime from './is-prime'
 import isNatural from './is-natural'
 import isFinite from './is-finite'
 import isInfinite from './is-infinite'
+import isZero from './is-zero'
+import isNonZero from './is-non-zero'
+import isSafeInteger from './is-safe-integer'
+import isMultipleOf from './is-multiple-of'
 
 export {
   isInteger,
@@ -28,4 +32,8 @@ export {
   isNatural,
   isFinite,
   isInfinite,
+  isZero,
+  isNonZero,
+  isSafeInteger,
+  isMultipleOf,
 }
