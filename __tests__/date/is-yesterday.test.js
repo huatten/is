@@ -1,22 +1,34 @@
 import isYesterday from '../../src/date/is-yesterday'
 
-const now = new Date()
-const yesterday = new Date(now.setDate(now.getDate() - 1))
-test('时间`yesterday`是昨天', () => {
+test('时间是昨天', () => {
+  const yesterday = new Date()
+  yesterday.setDate(yesterday.getDate() - 1)
   expect(isYesterday(yesterday)).toBe(true)
 })
 
-const current = new Date()
-const lastYesterday = new Date(current.setDate(current.getDate() - 2))
-test('时间`lastYesterday`不是昨天', () => {
-  expect(isYesterday(lastYesterday)).toBe(false)
+test('时间戳是昨天', () => {
+  const yesterday = new Date()
+  yesterday.setDate(yesterday.getDate() - 1)
+  const timestamp = yesterday.getTime()
+  expect(isYesterday(timestamp)).toBe(true)
 })
 
-const date = new Date()
-test('时间`date`不是昨天', () => {
-  expect(isYesterday(date)).toBe(false)
+test('时间不是昨天', () => {
+  const today = new Date()
+  expect(isYesterday(today)).toBe(false)
 })
 
-test('时间戳`1692630684039`是昨天', () => {
+test('时间戳不是昨天', () => {
+  const tomorrow = new Date()
+  tomorrow.setDate(tomorrow.getDate() + 1)
+  const timestamp = tomorrow.getTime()
+  expect(isYesterday(timestamp)).toBe(false)
+})
+
+test('特定时间戳是昨天', () => {
   expect(isYesterday(1692630684039)).toBe(true)
+})
+
+test('字符串时间戳不是昨天', () => {
+  expect(isYesterday('1692630684039')).toBe(false)
 })
