@@ -17,6 +17,7 @@
 - 🔠 **字符串模式**：验证 URL、邮箱、电话号码、十六进制颜色等
 - 📦 **模块化设计**：按需导入，保持包体积小巧
 - 🛡️ **支持 Tree Shaking**：完全支持 tree shaking 以消除未使用的代码
+- 🔧 **灵活的导入方式**：支持命名导入、命名空间导入和模块特定导入
 - 📖 **文档完善**：包含示例的全面文档
 - 🧪 **测试完善**：经过良好测试，覆盖率高
 
@@ -35,170 +36,63 @@ pnpm add is-check
 
 ## 快速开始
 
-### 导入所有功能
+### 方式 1：命名导入（推荐）⭐⭐⭐⭐⭐
 
 ```javascript
-import is from 'is-check'
+// 导入特定函数
+import { isArray, isString, isInteger, isPrime, isEven } from 'is-check'
 
 // 类型检查
-console.log(is.array([1, 2, 3])) // true
-console.log(is.string('hello')) // true
-console.log(is.function(() => {})) // true
-
-// 数字验证
-console.log(is.integer(42)) // true
-console.log(is.prime(7)) // true
-console.log(is.even(4)) // true
-
-// 环境检测
-console.log(is.browser()) // true (如果在浏览器中)
-console.log(is.mobile()) // true (如果在移动设备上)
-console.log(is.chrome()) // true (如果在 Chrome 浏览器中)
-```
-
-### 导入特定模块
-
-```javascript
-// 只导入需要的功能
-import { isArray, isString } from 'is-check'
-// 或者
-import { isArray } from 'is-check/type'
-
 console.log(isArray([1, 2, 3])) // true
 console.log(isString('hello')) // true
+
+// 数字验证
+console.log(isInteger(42)) // true
+console.log(isPrime(7)) // true
+console.log(isEven(4)) // true
 ```
 
-### 使用默认导出
+### 方式 2：命名空间导入 ⭐⭐⭐⭐
 
 ```javascript
-import is from 'is-check'
+// 导入模块命名空间
+import { type, number, regexp, env, date } from 'is-check'
 
-// 类型检查
-is.array([1, 2, 3]) // true
-is.object({}) // true
-is.string('hello') // true
-is.number(42) // true
-is.boolean(true) // true
-is.undefined(undefined) // true
-is.null(null) // true
-is.function(() => {}) // true
-is.date(new Date()) // true
-is.regexp(/abc/) // true
-is.symbol(Symbol('id')) // true
-is.bigint(BigInt(42)) // true
-is.NaN(NaN) // true
-is.empty('') // true
-is.empty([]) // true
-is.empty({}) // true
-is.json('{"a": 1}') // true
-is.arguments(arguments) // true (在函数上下文中)
-is.element(document.body) // true (在浏览器中)
-is.arraybuffer(new ArrayBuffer(8)) // true
-is.map(new Map()) // true
-is.set(new Set()) // true
-is.promise(Promise.resolve()) // true
-is.generator(function* () {}) // true
-is.asyncFunction(async () => {}) // true
-is.typedArray(new Int8Array()) // true
-is.error(new Error()) // true
-is.file(new File([], 'test.txt')) // true
-is.blob(new Blob()) // true
-is.formData(new FormData()) // true
+// 使用命名空间
+console.log(type.isArray([1, 2, 3])) // true
+console.log(type.isString('hello')) // true
+console.log(number.isInteger(42)) // true
+console.log(number.isPrime(7)) // true
+console.log(env.isBrowser()) // true/false
+console.log(date.isToday(new Date())) // true/false
+```
 
-// 数字检查
-is.integer(42) // true
-is.decimal(3.14) // true
-is.positive(5) // true
-is.negative(-3) // true
-is.positiveInteger(5) // true
-is.negativeInteger(-3) // true
-is.positiveDecimal(3.14) // true
-is.negativeDecimal(-3.14) // true
-is.odd(3) // true
-is.even(4) // true
-is.prime(7) // true
-is.natural(1) // true
-is.finite(42) // true
-is.infinite(Infinity) // true
+### 方式 3：模块路径导入 ⭐⭐⭐⭐⭐
 
-// 环境检测
-is.browser() // true/false
-is.node() // true/false
-is.mobile() // true/false
-is.desktop() // true/false
-is.tablet() // true/false
-is.ios() // true/false
-is.android() // true/false
-is.iphone() // true/false
-is.ipad() // true/false
-is.windows() // true/false
-is.mac() // true/false
-is.linux() // true/false
-is.chrome() // true/false
-is.firefox() // true/false
-is.safari() // true/false
-is.edge() // true/false
-is.ie() // true/false
-is.opera() // true/false
-is.wechat() // true/false
-is.online() // true/false
-is.offline() // true/false
+```javascript
+// 从特定模块导入
+import { isArray, isString } from 'is-check/type'
+import { isInteger, isPrime, isEven } from 'is-check/number'
+import { isEmail, isUrl } from 'is-check/regexp'
+import { isBrowser, isMobile } from 'is-check/env'
+import { isToday, isWeekend } from 'is-check/date'
 
-// 字符串/正则表达式模式
-is.url('https://example.com') // true
-is.email('test@example.com') // true
-is.phoneNumber('13800138000') // true
-is.uuid('550e8400-e29b-41d4-a716-446655440000') // true
-is.hexColor('#ff0000') // true
-is.md5('5d41402abc4b2a76b9719d911017c592') // true
-is.sha256('ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb') // true
-is.jwt('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...') // true
-is.chinese('你好世界') // true
-is.english('Hello World') // true
-is.html('<div>Hello</div>') // true
-is.camelCase('camelCase') // true
-is.pascalCase('PascalCase') // true
-is.snakeCase('snake_case') // true
-is.uppercase('UPPERCASE') // true
-is.lowercase('lowercase') // true
-is.province('广东省') // true
-is.ip('192.168.1.1') // true
-is.ipv4('192.168.1.1') // true
-is.ipv6('2001:0db8:85a3:0000:0000:8a2e:0370:7334') // true
-is.creditCard('4532015112830366') // true
-is.macAddress('00:11:22:33:44:55') // true
-is.magnetURI('magnet:?xt=urn:btih:...') // true
-is.mimeType('text/html') // true
-is.base64('SGVsbG8gV29ybGQ=') // true
-is.jsonString('{"name": "John"}') // true
-is.ascii('Hello World') // true
-is.multibyte('Héllo Wörld') // true
-is.halfWidth('Hello World') // true
-is.fullWidth('ＡＢＣ１２３') // true
-is.surrogatePair('𠮷') // true
+console.log(isArray([1, 2, 3])) // true
+console.log(isInteger(42)) // true
+console.log(isEmail('test@example.com')) // true
+console.log(isBrowser()) // true/false
+```
 
-// 日期检查
-is.timestamp(1640995200000) // true
-is.today(new Date()) // true/false
-is.yesterday(new Date(Date.now() - 86400000)) // true
-is.tomorrow(new Date(Date.now() + 86400000)) // true
-is.weekend(new Date('2023-01-01')) // true (星期日)
-is.weekday(new Date('2023-01-02')) // true (星期一)
-is.leapYear(2024) // true
-is.time('14:30:00') // true
-is.time12('2:30:00 PM') // true
-is.time24('14:30:00') // true
-is.past(new Date('2020-01-01')) // true
-is.feature(new Date('2030-01-01')) // true
-is.thisWeek(new Date()) // true/false
-is.thisMonth(new Date()) // true/false
-is.thisYear(new Date()) // true/false
-is.nextWeek(new Date(Date.now() + 7 * 86400000)) // true
-is.nextMonth(new Date(Date.now() + 30 * 86400000)) // true
-is.nextYear(new Date(Date.now() + 365 * 86400000)) // true
-is.lastWeek(new Date(Date.now() - 7 * 86400000)) // true
-is.lastMonth(new Date(Date.now() - 30 * 86400000)) // true
-is.lastYear(new Date(Date.now() - 365 * 86400000)) // true
+### 方式 4：全量导出（不推荐）
+
+```javascript
+// 导入所有函数（不推荐，不利于 tree-shaking）
+import * as is from 'is-check'
+
+// 所有函数名都带有 'is' 前缀
+console.log(is.isArray([1, 2, 3])) // true
+console.log(is.isString('hello')) // true
+console.log(is.isInteger(42)) // true
 ```
 
 ## API 参考
@@ -255,6 +149,10 @@ is.lastYear(new Date(Date.now() - 365 * 86400000)) // true
 | `isNatural(value)` | 检查值是否为自然数 | `isNatural(1)` |
 | `isFinite(value)` | 检查值是否为有限数 | `isFinite(42)` |
 | `isInfinite(value)` | 检查值是否为无限数 | `isInfinite(Infinity)` |
+| `isZero(value)` | 检查值是否为零 | `isZero(0)` |
+| `isNonZero(value)` | 检查值是否为非零数 | `isNonZero(1)` |
+| `isSafeInteger(value)` | 检查值是否为安全整数 | `isSafeInteger(42)` |
+| `isMultipleOf(value, divisor)` | 检查值是否为除数的倍数 | `isMultipleOf(10, 2)` |
 
 ### 正则表达式模块 (`is-check/regexp`)
 
@@ -371,8 +269,18 @@ is.lastYear(new Date(Date.now() - 365 * 86400000)) // true
 import { isArray, isString } from 'is-check'
 
 // 从特定模块导入
+import { isArray } from 'is-check/type'
+import { isInteger } from 'is-check/number'
+import { isEmail } from 'is-check/regexp'
+import { isBrowser } from 'is-check/env'
+import { isToday } from 'is-check/date'
+
+// 导入单个函数以获得最大的 tree-shaking 效果
 import isArray from 'is-check/type/is-array'
 import isInteger from 'is-check/number/is-integer'
+import isEmail from 'is-check/regexp/is-email'
+import isBrowser from 'is-check/env/is-browser'
+import isToday from 'is-check/date/is-today'
 ```
 
 ## 开发

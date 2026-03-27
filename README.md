@@ -17,6 +17,7 @@
 - 🔠 **String Patterns**: Validate URLs, emails, phone numbers, hex colors, etc.
 - 📦 **Modular Design**: Import only what you need to keep bundle size small
 - 🛡️ **Tree Shakable**: Full support for tree shaking to eliminate unused code
+- 🔧 **Flexible Import**: Support for named imports, namespace imports, and module-specific imports
 - 📖 **Well Documented**: Comprehensive documentation with examples
 - 🧪 **Well Tested**: Thoroughly tested with good coverage
 
@@ -35,170 +36,63 @@ pnpm add is-check
 
 ## Quick Start
 
-### Import Everything
+### Method 1: Named Imports (Recommended) ⭐⭐⭐⭐⭐
 
 ```javascript
-import is from 'is-check'
+// Import specific functions
+import { isArray, isString, isInteger, isPrime, isEven } from 'is-check'
 
 // Type checking
-console.log(is.array([1, 2, 3])) // true
-console.log(is.string('hello')) // true
-console.log(is.function(() => {})) // true
-
-// Number validation
-console.log(is.integer(42)) // true
-console.log(is.prime(7)) // true
-console.log(is.even(4)) // true
-
-// Environment detection
-console.log(is.browser()) // true (if in browser)
-console.log(is.mobile()) // true (if on mobile device)
-console.log(is.chrome()) // true (if in Chrome browser)
-```
-
-### Import Specific Modules
-
-```javascript
-// Import only what you need
-import { isArray, isString } from 'is-check'
-// or
-import { isArray } from 'is-check/type'
-
 console.log(isArray([1, 2, 3])) // true
 console.log(isString('hello')) // true
+
+// Number validation
+console.log(isInteger(42)) // true
+console.log(isPrime(7)) // true
+console.log(isEven(4)) // true
 ```
 
-### Using Default Export
+### Method 2: Namespace Imports ⭐⭐⭐⭐
 
 ```javascript
-import is from 'is-check'
+// Import module namespaces
+import { type, number, regexp, env, date } from 'is-check'
 
-// Type checks
-is.array([1, 2, 3]) // true
-is.object({}) // true
-is.string('hello') // true
-is.number(42) // true
-is.boolean(true) // true
-is.undefined(undefined) // true
-is.null(null) // true
-is.function(() => {}) // true
-is.date(new Date()) // true
-is.regexp(/abc/) // true
-is.symbol(Symbol('id')) // true
-is.bigint(BigInt(42)) // true
-is.NaN(NaN) // true
-is.empty('') // true
-is.empty([]) // true
-is.empty({}) // true
-is.json('{"a": 1}') // true
-is.arguments(arguments) // true (in function context)
-is.element(document.body) // true (in browser)
-is.arraybuffer(new ArrayBuffer(8)) // true
-is.map(new Map()) // true
-is.set(new Set()) // true
-is.promise(Promise.resolve()) // true
-is.generator(function* () {}) // true
-is.asyncFunction(async () => {}) // true
-is.typedArray(new Int8Array()) // true
-is.error(new Error()) // true
-is.file(new File([], 'test.txt')) // true
-is.blob(new Blob()) // true
-is.formData(new FormData()) // true
+// Use with namespace
+console.log(type.isArray([1, 2, 3])) // true
+console.log(type.isString('hello')) // true
+console.log(number.isInteger(42)) // true
+console.log(number.isPrime(7)) // true
+console.log(env.isBrowser()) // true/false
+console.log(date.isToday(new Date())) // true/false
+```
 
-// Number checks
-is.integer(42) // true
-is.decimal(3.14) // true
-is.positive(5) // true
-is.negative(-3) // true
-is.positiveInteger(5) // true
-is.negativeInteger(-3) // true
-is.positiveDecimal(3.14) // true
-is.negativeDecimal(-3.14) // true
-is.odd(3) // true
-is.even(4) // true
-is.prime(7) // true
-is.natural(1) // true
-is.finite(42) // true
-is.infinite(Infinity) // true
+### Method 3: Module Path Imports ⭐⭐⭐⭐⭐
 
-// Environment detection
-is.browser() // true/false
-is.node() // true/false
-is.mobile() // true/false
-is.desktop() // true/false
-is.tablet() // true/false
-is.ios() // true/false
-is.android() // true/false
-is.iphone() // true/false
-is.ipad() // true/false
-is.windows() // true/false
-is.mac() // true/false
-is.linux() // true/false
-is.chrome() // true/false
-is.firefox() // true/false
-is.safari() // true/false
-is.edge() // true/false
-is.ie() // true/false
-is.opera() // true/false
-is.wechat() // true/false
-is.online() // true/false
-is.offline() // true/false
+```javascript
+// Import from specific modules
+import { isArray, isString } from 'is-check/type'
+import { isInteger, isPrime, isEven } from 'is-check/number'
+import { isEmail, isUrl } from 'is-check/regexp'
+import { isBrowser, isMobile } from 'is-check/env'
+import { isToday, isWeekend } from 'is-check/date'
 
-// String/RegExp patterns
-is.url('https://example.com') // true
-is.email('test@example.com') // true
-is.phoneNumber('13800138000') // true
-is.uuid('550e8400-e29b-41d4-a716-446655440000') // true
-is.hexColor('#ff0000') // true
-is.md5('5d41402abc4b2a76b9719d911017c592') // true
-is.sha256('ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb') // true
-is.jwt('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...') // true
-is.chinese('你好世界') // true
-is.english('Hello World') // true
-is.html('<div>Hello</div>') // true
-is.camelCase('camelCase') // true
-is.pascalCase('PascalCase') // true
-is.snakeCase('snake_case') // true
-is.uppercase('UPPERCASE') // true
-is.lowercase('lowercase') // true
-is.province('广东省') // true
-is.ip('192.168.1.1') // true
-is.ipv4('192.168.1.1') // true
-is.ipv6('2001:0db8:85a3:0000:0000:8a2e:0370:7334') // true
-is.creditCard('4532015112830366') // true
-is.macAddress('00:11:22:33:44:55') // true
-is.magnetURI('magnet:?xt=urn:btih:...') // true
-is.mimeType('text/html') // true
-is.base64('SGVsbG8gV29ybGQ=') // true
-is.jsonString('{"name": "John"}') // true
-is.ascii('Hello World') // true
-is.multibyte('Héllo Wörld') // true
-is.halfWidth('Hello World') // true
-is.fullWidth('ＡＢＣ１２３') // true
-is.surrogatePair('𠮷') // true
+console.log(isArray([1, 2, 3])) // true
+console.log(isInteger(42)) // true
+console.log(isEmail('test@example.com')) // true
+console.log(isBrowser()) // true/false
+```
 
-// Date checks
-is.timestamp(1640995200000) // true
-is.today(new Date()) // true/false
-is.yesterday(new Date(Date.now() - 86400000)) // true
-is.tomorrow(new Date(Date.now() + 86400000)) // true
-is.weekend(new Date('2023-01-01')) // true (Sunday)
-is.weekday(new Date('2023-01-02')) // true (Monday)
-is.leapYear(2024) // true
-is.time('14:30:00') // true
-is.time12('2:30:00 PM') // true
-is.time24('14:30:00') // true
-is.past(new Date('2020-01-01')) // true
-is.feature(new Date('2030-01-01')) // true
-is.thisWeek(new Date()) // true/false
-is.thisMonth(new Date()) // true/false
-is.thisYear(new Date()) // true/false
-is.nextWeek(new Date(Date.now() + 7 * 86400000)) // true
-is.nextMonth(new Date(Date.now() + 30 * 86400000)) // true
-is.nextYear(new Date(Date.now() + 365 * 86400000)) // true
-is.lastWeek(new Date(Date.now() - 7 * 86400000)) // true
-is.lastMonth(new Date(Date.now() - 30 * 86400000)) // true
-is.lastYear(new Date(Date.now() - 365 * 86400000)) // true
+### Method 4: Full Import (Not Recommended)
+
+```javascript
+// Import everything (not recommended for tree-shaking)
+import * as is from 'is-check'
+
+// All function names are prefixed with 'is'
+console.log(is.isArray([1, 2, 3])) // true
+console.log(is.isString('hello')) // true
+console.log(is.isInteger(42)) // true
 ```
 
 ## API Reference
@@ -255,6 +149,10 @@ is.lastYear(new Date(Date.now() - 365 * 86400000)) // true
 | `isNatural(value)` | Check if value is a natural number | `isNatural(1)` |
 | `isFinite(value)` | Check if value is finite | `isFinite(42)` |
 | `isInfinite(value)` | Check if value is infinite | `isInfinite(Infinity)` |
+| `isZero(value)` | Check if value is zero | `isZero(0)` |
+| `isNonZero(value)` | Check if value is non-zero | `isNonZero(1)` |
+| `isSafeInteger(value)` | Check if value is a safe integer | `isSafeInteger(42)` |
+| `isMultipleOf(value, divisor)` | Check if value is a multiple of divisor | `isMultipleOf(10, 2)` |
 
 ### RegExp Module (`is-check/regexp`)
 
@@ -371,8 +269,18 @@ is.lastYear(new Date(Date.now() - 365 * 86400000)) // true
 import { isArray, isString } from 'is-check'
 
 // Import from specific modules
+import { isArray } from 'is-check/type'
+import { isInteger } from 'is-check/number'
+import { isEmail } from 'is-check/regexp'
+import { isBrowser } from 'is-check/env'
+import { isToday } from 'is-check/date'
+
+// Import individual functions for maximum tree-shaking
 import isArray from 'is-check/type/is-array'
 import isInteger from 'is-check/number/is-integer'
+import isEmail from 'is-check/regexp/is-email'
+import isBrowser from 'is-check/env/is-browser'
+import isToday from 'is-check/date/is-today'
 ```
 
 ## Development
